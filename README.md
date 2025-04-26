@@ -75,3 +75,6 @@ mod |    0     1     2     3     4     5
 
 These scripts are intended as educational tools to visually explore the distribution of prime numbers, allowing learners to easily recognize patterns and properties of primes through modular arithmetic.
 
+Credits: https://www.scirp.org/journal/paperinformation?paperid=133679 
+
+
