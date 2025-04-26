@@ -11,7 +11,7 @@ def periodic_table_of_primes(limit, columns=6):
     
     # Initialize the table
     table = [["." for _ in range(columns)] for _ in range((limit // columns) + 1)]
-    
+
     for prime in primes:
         row = prime // columns
         col = prime % columns
@@ -19,13 +19,16 @@ def periodic_table_of_primes(limit, columns=6):
 
     # Display table
     print(f"Periodic Table of Primes (mod {columns}):\n")
-    header = " ".join([f"mod{i}".rjust(4) for i in range(columns)])
-    print(header)
-    print("-" * len(header))
-
+    print("mod |", end="")
+    for i in range(columns):
+        print(f"{i:>5}", end="")
+    print("\n" + "-" * (6 + columns * 5))
+    
     for idx, row in enumerate(table):
-        line = " ".join(row)
-        print(f"{str(idx*columns).rjust(3)} | {line}")
+        print(f"{idx * columns:3} |", end="")
+        for cell in row:
+            print(f"{cell:>5}", end="")
+        print()
 
 # Example: Primes up to 100
 periodic_table_of_primes(100)
